@@ -1,0 +1,41 @@
+body {
+    background-image: url("../img/wallpaper/bg01.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right top;
+    background-attachment: fixed;
+} 
+
+.parallax-news{
+    background-image: url("../img/wallpaper/news.jpeg");
+
+    /* Set a specific height */
+    height: 400px;
+    width: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-abo{
+    background-image: url("../img/wallpaper/people.jpg");
+
+    /* Set a specific height */
+    height: 400px;
+    width: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backprofil{
+    background-image: url("../img/bg-404.jpeg");
+    background-size: cover;
+    background-position: center;
+}
