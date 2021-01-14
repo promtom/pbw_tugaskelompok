@@ -1,8 +1,9 @@
-<nav class = "navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="<?= base_url('blog') ?>">
-            <div class="avatar-sm">
-                <img src="<?= base_url('assets/img/avatar/deepcolor.png') ?>" class="avatar-img"> PBWnews
+<nav class = "navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand flex-column" href="<?= base_url('blog') ?>">
+            <div class="d-flex flex-row justify-content-center mt-2">
+                <img src="<?= base_url('assets/img/avatar/deepcolor.png') ?>" class="avatar-sm avatar-img">
+                <h4 class="judul"> PBWnews </h4>
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" 

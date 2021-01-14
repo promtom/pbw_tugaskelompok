@@ -38,7 +38,7 @@
 
 <body class="login">
 	<div class="wrapper wrapper-login">
-    	<?php $this->load->view('layouts/2/sweetalert'); ?>
+    	<?php $this->load->view('layouts/admin/sweetalert'); ?>
 		<div class="container container-login animated fadeIn">
 			<form action="<?= base_url('admin/login/validasi'); ?>" method="post">
 				<h3 class="text-center">Sign In</h3>

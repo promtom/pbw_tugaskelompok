@@ -42,7 +42,7 @@
 		</ul>
 		<!-- END Breadcrumb -->
 	</div>
-    <?php $this->load->view('layouts/2/sweetalert'); ?>
+    <?php $this->load->view('layouts/admin/sweetalert'); ?>
 	<div class="row">
 		<div class="col-md-8">
 			<div class="card">
@@ -106,7 +106,7 @@
 								</div>
 							</div>
 							<div class="form-group mb-3">
-								<input type="hidden" class="form-control" name="old" id="old" value="<?=$foto?>" required>
+								<input type="hidden" class="form-control" name="old" id="old" value="<?=$user["foto"]?>" required>
 							</div>
 							<div class="mb-12">
 								<a href="<?= base_url('admin/user'); ?>" class="btn btn-danger float-right">

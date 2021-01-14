@@ -7,6 +7,10 @@ class User extends CI_Controller {
         parent::__construct();
         if (!$this->session->userdata('username')) {
             redirect('admin/login');
+        }
+        if ($this->session->status!=1) {
+            $this->session->set_flashdata('fail', 'akses ditolak');
+            redirect('admin/home');
         } //check session
         $this->load->model('User_model');
         $this->load->model('berita_model');
@@ -18,7 +22,7 @@ class User extends CI_Controller {
         $data["konten"] = "page/InBuild";
         $data['user'] = $this->User_model->show_user();
         $data["konten"] = "page/admin/user/index";
-        $this->load->view("layouts/main2", $data);
+        $this->load->view("layouts/admin", $data);
     }
     public function show($id) {
         $data["mUser"] = true;
@@ -74,7 +78,7 @@ class User extends CI_Controller {
             $data["mUser"] = true;
             $data["judul"] = "Add User";
             $data["konten"] = "page/admin/user/add";
-            $this->load->view("layouts/main2", $data);
+            $this->load->view("layouts/admin", $data);
         }
     }
     public function edit($id) {
@@ -91,7 +95,7 @@ class User extends CI_Controller {
                     $img = $this->upload->data();
                 }
                 else{
-                    $img =  $this->input->post('old');
+                    $img['file_name'] =  $this->input->post('old');
                 }
                 $update = array(
                     'username' => $this->input->post('username'),
@@ -115,7 +119,7 @@ class User extends CI_Controller {
                 $data["muser"] = true;
                 $data["judul"] = "Edit user";
                 $data["konten"] = "page/admin/user/edit";
-                $this->load->view("layouts/main2", $data);
+                $this->load->view("layouts/admin", $data);
             }
         }
         else {

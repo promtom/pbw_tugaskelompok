@@ -5,6 +5,7 @@ class Blog extends CI_Controller{
         $this->load->model('berita_model');
         $this->load->model('kategori_model');
         $this->load->model('user_model');
+        $this->load->model('auth_model');
     } 
 
     function index(){
@@ -76,7 +77,7 @@ class Blog extends CI_Controller{
 
     function about(){
         $data["bAbout"] = true;
-        $data['judul'] = "PBW News";
+        $data['judul'] = "PBW News-Author";
         $data["konten"] = "page/blog/about";
         $data["berita"] = $this->berita_model->show_berita();
         /* PAGINATION */
@@ -129,7 +130,7 @@ class Blog extends CI_Controller{
     }
     function thor($id){
         $data["bAbout"] = true;
-        $data['judul'] = "PBW News";
+        $data['judul'] = "PBW News-Author";
         $data["konten"] = "page/blog/profil";
         $data['berita'] = $this->berita_model->show_berita();
         $data["user"] = $this->user_model->get_user($id);

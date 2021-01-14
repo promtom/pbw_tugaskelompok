@@ -14,6 +14,6 @@ class About extends CI_Controller {
         $data["mAbout"] = true;
         $data["judul"] = "About";
         $data["konten"] = "page/admin/about";
-        $this->load->view("layouts/main2", $data);
+        $this->load->view("layouts/admin", $data);
     }
 }

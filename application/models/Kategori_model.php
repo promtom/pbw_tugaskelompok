@@ -13,7 +13,7 @@ class Kategori_model extends CI_Model{
     }
       
     function show_kategori() {
-        $this->db->order_by($this->primerykey, 'desc');
+        $this->db->order_by("kategori_nama", 'asc');
         return $this->db->get($this->table_name)->result_array();
     }
         

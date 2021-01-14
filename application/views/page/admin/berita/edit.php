@@ -1,3 +1,21 @@
+<script>
+	function preview_foto(event) {
+
+		var reader = new FileReader();
+		reader.onload = function() {
+			var output = document.getElementById('viewfoto');
+			output.src = reader.result;
+		}
+		reader.readAsDataURL(event.target.files[0]);
+	}
+</script>
+<?php
+    if($berita["brt_foto"]){
+        $foto = 'assets/img/thumbnail/'.$berita["brt_foto"];
+    }
+    else $foto = 'assets/img/SOS.svg';
+    $i=0;
+?>
 <div class="page-inner">
 	<div class="page-header">
 		<!-- Start Breadcrumb -->
@@ -23,13 +41,20 @@
 		</ul>
 		<!-- END Breadcrumb -->
 	</div>
-    <?php $this->load->view('layouts/2/sweetalert'); ?>
+    <?php $this->load->view('layouts/admin/sweetalert'); ?>
+    <?php if ($this->session->id_u==$berita['brt_admin']||$this->session->status==1) : ?>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header">
 					<div class="d-flex align-items-center">
-						<h4 class="card-title"><?= $judul?></h4>
+						<h4 class="card-title">
+							<b><?= $judul?> </b>
+							<?php
+								if($this->session->id_u==$berita['brt_admin']) echo("As Writer");
+								else if ($this->session->status==1) echo("As Admin");
+							?>
+						</h4>
 						<a class="btn btn-primary btn-round ml-auto" href="<?= base_url('admin/berita/'); ?>">
 							<i class="fas fa-arrow-left"></i> back
 						</a>
@@ -38,7 +63,18 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col">
-					        <?php echo form_open('admin/berita/edit/'.$berita['brt_id'],array("class"=>"form-horizontal")); ?>
+					        <?php echo form_open_multipart('admin/berita/edit/'.$berita['brt_id'],array("class"=>"form-horizontal")); ?>
+							<div class="form-group mb-3">
+								<div class="row-sm-3">
+									<label for="foto">Foto</label>
+								</div>
+								<div class="row-sm-9">
+									<input type="file" class="form-control" name="foto" id="foto" onchange="preview_foto(event)" >
+                                    <small id="file_help" class="form-text text-muted">
+										Ukuran maksimum foto <b>10 MB</b>.
+									</small>
+								</div>
+							</div>
 							<div class="form-group mb-3">
 								<div class="row-sm-3">
 									<label for="brt_judul">Judul</label>
@@ -52,10 +88,12 @@
 									<label for="brt_kategori">kategori</label>
 								</div>
 								<div class="row-sm-9">
-									<select  class="form-control" name="brt_kategori" id="brt_kategori" required>
+									<select multiple class="form-control" name="brt_kategori[]" id="brt_kategori" required>
+									<?php $arr = explode(",",$berita["brt_kategori"]); ?>
 									<option disabled >Select Here</option>
 										<?php foreach ($kategori as $wow) : ?>
-											<option <?= ($wow["kategori_id"]==$berita['brt_kategori']) ? 'selected' : ''; ?> value="<?= $wow["kategori_id"] ?>"><?= $wow["kategori_nama"] ?></option>
+											<option <?php foreach ($arr as $ror){if($wow["kategori_id"]==$ror){echo('selected');}}?> 
+											value="<?= $wow["kategori_id"] ?>"><?= $wow["kategori_nama"] ?></option>
                                         <?php endforeach ?>
                                     </select>
 								</div>
@@ -71,8 +109,10 @@
 								</div>
 							</div>
 							<div class="form-group mb-3">
-								<input type="hidden" name="brt_admin" value="<?= $this->session->userdata('id_u'); ?>">
+								<!-- <input type="hidden" name="brt_admin" value="<?= $this->session->userdata('id_u'); ?>"> -->
+								<input type="hidden" name="brt_admin" value="<?= $berita['brt_admin']?>">
 								<input type="hidden" name="brt_create" value="<?= $berita['brt_create']?>">
+								<input type="hidden" class="form-control" name="old" id="old" value="<?=$berita["brt_foto"]?>" required>
 							</div>
 							<div class="mb-12">
 								<a href="<?= base_url('admin/berita'); ?>" class="btn btn-danger float-right">
@@ -88,5 +128,22 @@
 				</div>
 			</div>
 		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<div class="card-title"><b>Thumbnail</b></div>
+				</div>
+				<div class="card-body">
+					<figure>
+						<img src="<?= base_url($foto); ?>" id="viewfoto" class="responimg">
+					</figure>
+				</div>
+			</div>
+		</div>
 	</div>
+	<?php else : ?>
+		
+	<?php $this->load->view('page/admin/larang'); ?>
+	<?php endif?>
+	
 </div>

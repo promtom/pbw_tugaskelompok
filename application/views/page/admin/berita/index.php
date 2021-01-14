@@ -18,13 +18,13 @@
 		</ul>
 		<!-- END Breadcrumb -->
 	</div>
-    <?php $this->load->view('layouts/2/sweetalert'); ?>
+    <?php $this->load->view('layouts/admin/sweetalert'); ?>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
 					<div class="d-flex align-items-center">
-						<h4 class="card-title"><?= $judul?></h4>
+						<h4 class="card-title"><b><?= $judul?></b></h4>
 						<a class="btn btn-primary btn-round ml-auto" href="<?= base_url('admin/berita/add'); ?>">
 							<i class="fa fa-plus"></i> Tambah Data
 						</a>
@@ -53,14 +53,16 @@
 									<td><?= date("d F Y", strtotime($row["brt_create"]))?></td>
 									<td><?= date("d F Y", strtotime($row["brt_tgl"]))?></td>
 									<td>
-										<?php foreach ($kategori as $wow) : ?>
-											<?php 
-												if($row["brt_kategori"]==$wow["kategori_id"]){
-													$j=1; echo($wow["kategori_nama"]);break;
+										<?php 
+											$arr = explode(",",$row["brt_kategori"]);
+											// print_r($arr);
+											foreach ($arr as $ror) {
+												foreach ($kategori as $wow) {
+													if($ror==$wow["kategori_id"]){
+														$j=1; echo($wow["kategori_nama"]."<br>");break;
+													}
 												}
-											?>
-										<?php endforeach ?>
-										<?php
+											}
 											if($j==0) echo("DATA NOT FOUND"); $j=0;
 										?>
 									</td>

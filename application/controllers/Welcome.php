@@ -29,9 +29,10 @@ class Welcome extends CI_Controller {
 	}
 	*/
 	function index(){
-        $data['judul'] = "This is title";
-        $data['konten'] = "This is contents";
-		$data['_view'] = "page/index";
-		$this->load->view('layouts/normal', $data);
+        // $data['judul'] = "This is title";
+        // $data['konten'] = "This is contents";
+		// $data['_view'] = "page/index";
+		// $this->load->view('layouts/normal', $data);
+		redirect('blog');
     }
 }

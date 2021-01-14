@@ -3,8 +3,8 @@
 	<div class="row my-3">
 		<div class="col">
 			<div class="parallax-abo">
-				<div class="centered text-center container-fluid" id="txtabout">
-					<h2 class="about_title">Penulis</h2>
+				<div class="panel-paralax text-center container-fluid" id="">
+					<h2 class="title-about">Penulis</h2>
 					<p class="mb-0">
 						Tak kenal maka tak sayang
 					</p>
@@ -30,12 +30,12 @@
     				</div>
     			</div>
     			<div class="card-body text-center">
-    				<h4 class="card-title profil_title">
+    				<h4 class="card-title title-profil">
 						<?= $row["username"] ?>
 					</h4>
     				<div class="card-text">
     					Total artikel yang sudah dibuat
-						<h4 class="profil_title">
+						<h4 class="title-profil">
 							<?php foreach ($berita as $wow) : ?>
 								<?php 
 									if($wow["brt_admin"]==$row["ID"]){

@@ -12,6 +12,10 @@ class Berita_model extends CI_Model{
         return $this->db->count_all($this->table_name);
     }
 
+    public function findlast(){
+        return $this->db->last_query($this->table_name);
+    }
+
     function get_berita($id) {
         return $this->db->get_where($this->table_name,array($this->primerykey=>$id))->row_array();
     }

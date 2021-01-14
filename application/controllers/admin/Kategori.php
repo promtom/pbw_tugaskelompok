@@ -16,7 +16,7 @@ class Kategori extends CI_Controller {
         $data["judul"] = "Kategori";
         $data["kategori"] = $this->kategori_model->show_kategori();
         $data["konten"] = "page/admin/kategori/index";
-        $this->load->view("layouts/main2", $data);
+        $this->load->view("layouts/admin", $data);
     }
 
     public function add() {
@@ -38,7 +38,7 @@ class Kategori extends CI_Controller {
             $data["mKategori"] = true;
             $data["judul"] = "Tambah kategori";
             $data["konten"] = "page/admin/kategori/add";
-            $this->load->view("layouts/main2", $data);
+            $this->load->view("layouts/admin", $data);
         }
     }
 
@@ -64,7 +64,7 @@ class Kategori extends CI_Controller {
                 $data["mKategori"] = true;
                 $data["judul"] = "Edit kategori";
                 $data["konten"] = "page/admin/kategori/edit";
-                $this->load->view("layouts/main2", $data);
+                $this->load->view("layouts/admin", $data);
             }
         }
         else {
@@ -96,6 +96,6 @@ class Kategori extends CI_Controller {
         $data["judul"] = "Kategori";
         $data["kategori"] = $this->kategori_model->get_kategori($id);
         $data["konten"] = "page/admin/kategori/show";
-        $this->load->view("layouts/main2", $data);
+        $this->load->view("layouts/admin", $data);
     }
 }

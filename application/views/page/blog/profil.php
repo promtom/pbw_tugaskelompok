@@ -58,7 +58,7 @@
                                 <div class="mb-2">
                                     <div class="nolink">
                                         <a href="<?= base_url('blog/konten/') ?><?= $row["brt_id"] ?>">
-                                            <h1 class="blog_title"><?= $row["brt_judul"] ?></h1>
+                                            <h1 class="title-blog"><?= $row["brt_judul"] ?></h1>
                                         </a>
                                     </div>
                                     <h3 class="text-justify">

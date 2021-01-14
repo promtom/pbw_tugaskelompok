@@ -9,30 +9,8 @@
     </div>
 </div>
 <div class="page-inner mt--5">
-    <?php $this->load->view('layouts/2/sweetalert'); ?>
-    <div class="row mt--2">
-        
-        <?php if ($this->session->status==1) : ?>
-        <div class="col-sm-6 col-md-3">
-            <div class="card card-stats card-round">
-                <div class="card-body ">
-                    <div class="row align-items-center">
-                        <div class="col-icon">
-                            <div class="icon-big text-center iconhitam bubble-shadow-small">
-                                <i class="fas fa-users"></i>
-                            </div>
-                        </div>
-                        <div class="col col-stats ml-3 ml-sm-0">
-                            <div class="numbers">
-                                <p class="card-category">Total user</p>
-                                <h4 class="card-title"><?= $total["total_user"] ?></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        <?php endif; ?>
+    <?php $this->load->view('layouts/admin/sweetalert'); ?>
+    <div class="row mt--2">    
         <div class="col-sm-6 col-md-3">
             <div class="card card-stats card-round">
                 <div class="card-body ">
@@ -57,7 +35,7 @@
                 <div class="card-body ">
                     <div class="row align-items-center">
                         <div class="col-icon">
-                            <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                            <div class="icon-big text-center icon-info bubble-shadow-small">
                                 <i class="fas fa-tag"></i>
                             </div>
                         </div>
@@ -71,5 +49,26 @@
                 </div>
             </div>
         </div> 
+        <?php if ($this->session->status==1) : ?>
+        <div class="col-sm-6 col-md-3">
+            <div class="card card-stats card-round">
+                <div class="card-body ">
+                    <div class="row align-items-center">
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                            <div class="numbers">
+                                <p class="card-category">Total user</p>
+                                <h4 class="card-title"><?= $total["total_user"] ?></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <?php endif; ?>
     </div>
 </div>

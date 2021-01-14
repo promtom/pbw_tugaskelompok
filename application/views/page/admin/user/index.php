@@ -18,7 +18,7 @@
 		</ul>
 		<!-- END Breadcrumb -->
 	</div>
-    <?php $this->load->view('layouts/2/sweetalert'); ?>
+    <?php $this->load->view('layouts/admin/sweetalert'); ?>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="card">

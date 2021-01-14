@@ -19,7 +19,7 @@ class Home extends CI_Controller {
             "total_kategori" => $this->auth_model->getCount('kategori'),
         ];
         $data["konten"] = "page/admin/home";
-        $this->load->view("layouts/main2", $data);
+        $this->load->view("layouts/admin", $data);
     }
 
     public function editPass($id) {
