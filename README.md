@@ -61,5 +61,5 @@ Ganti **http://localhost/Kuliah/PBW/PBWnews/** dengan URL dimana Anda menyimpan 
 
 ### laman
 Kami miiliki 2 tampilan yakni:
-(url)/admin/login   ==> dashboard admin
-(url)               ==> tampilan pbwnews
+- (url)/admin/login   ==> dashboard admin
+- (url)               ==> tampilan pbwnews
