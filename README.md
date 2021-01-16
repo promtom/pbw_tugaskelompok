@@ -25,15 +25,12 @@ Silahakan import file **pbw.sql** ke dalam database dengan nama **pbw**.
 Silahkan ke folder **assets/js/plugin/editor/ckeditor/confiq.js** dan cari kode seperti dibawah ini.
 
 ```php
-public function aktifkan()
-    {
         config.filebrowserBrowseUrl			= 'http://localhost/Kuliah/PBW/PBWnews/assets/js/plugin/editor/kcfinder/browse.php?type=files';
         config.filebrowserImageBrowseUrl	= 'http://localhost/Kuliah/PBW/PBWnews/assets/js/plugin/editor/kcfinder/browse.php?type=images';
         config.filebrowserFlashBrowseUrl	= 'http://localhost/Kuliah/PBW/PBWnews/assets/js/plugin/editor/kcfinder/browse.php?type=flash';
         config.filebrowserUploadUrl			= 'http://localhost/Kuliah/PBW/PBWnews/assets/js/plugin/editor/kcfinder/upload.php?type=files';
         config.filebrowserImageUploadUrl	= 'http://localhost/Kuliah/PBW/PBWnews/assets/js/plugin/editor/kcfinder/upload.php?type=images';
         config.filebrowserFlashUploadUrl	= 'http://localhost/Kuliah/PBW/PBWnews/assets/js/plugin/editor/kcfinder/upload.php?type=flash';
-    }
 ```
 Ganti angka **http://localhost/Kuliah/PBW/PBWnews/** dengan URL dimana Anda menyimpan folder ini
 
