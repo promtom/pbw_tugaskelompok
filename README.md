@@ -5,7 +5,7 @@ Sebuah website forum wisata daerah. Untuk link yang sudah di hosting di
 [pbwnews](https://pbwnewss.000webhostapp.com/ "pbwnews")
 
 ### Dosen
-- [Pak Yaddarunullah](https://github.com/yaddarabullah "Pak Yaddarunullah")
+- [Pak Yaddarubullah](https://github.com/yaddarabullah "Pak Yaddarubullah")
 
 ### Anggota Kelompok
 - [Aldi Mulia WIjaya](https://github.com/promtom "Aldi Mulia WIjaya")
